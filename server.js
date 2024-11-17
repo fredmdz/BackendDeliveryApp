@@ -8,11 +8,13 @@ const passport = require('passport');
 const multer = require('multer');
 const io = require('socket.io')(server);
 const mercadopago = require('mercadopago');
+const os = require('os');
+// const server = require('http').createServer();
+
 mercadopago.configure({
     sandbox: true,
     access_token: 'TEST-6173977767324392-111512-c62c335be7040baea50f33f1bfc64cea-1063637350'
 });
-
 
 
 /*
@@ -68,11 +70,23 @@ productRoutes(app, upload);
 ordersRoutes(app);
 mercadoPagoRoutes(app);
 
+const getLocalIPAddress = () => {
+    const interfaces = os.networkInterfaces();
+    for (const name of Object.keys(interfaces)) {
+        for (const iface of interfaces[name]) {
+            if (iface.family === 'IPv4' && !iface.internal)
+                return iface.address;
+        }
+    }
+    return 'localhost';
+};
 
-server.listen(3000, "172.28.192.1" || "localhost", function () {
-  console.log("Aplicacion de NodeJS " + port + " Iniciada...");
+const puerto = 3000;
+const ipAddress = getLocalIPAddress();
+
+server.listen(port, ipAddress, function () {
+  console.log(`Aplicacion de NodeJS ${port} Iniciada en ${ipAddress}...`);
 });
-
 
 // ERROR HANDLER
 app.use((err, req, res, next) => {
