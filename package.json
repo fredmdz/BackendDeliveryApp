@@ -2,7 +2,7 @@
   "name": "backenddeliveryapp",
   "version": "1.0.0",
   "description": "Backend de la Unach Eats\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Daplicacion Unach Eats",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
