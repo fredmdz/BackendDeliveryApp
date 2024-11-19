@@ -102,6 +102,7 @@ module.exports = {
         });
 
     },
+    
     async registerWithImage(req, res) {
 
         const user = JSON.parse(req.body.user); // CAPTURO LOS DATOS QUE ME ENVIE EL CLIENTE
