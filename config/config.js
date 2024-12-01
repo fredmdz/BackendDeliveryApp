@@ -1,15 +1,5 @@
-const mysql = require('mysql');
-
-const db = mysql.createConnection({
-    host: '35.232.111.178',
-    user: 'root',
-    password: 'password',
-    database: 'delivery_app'
-});
-
-db.connect(function(err) {
-    if (err) throw err;
-    console.log("DATABASE CONNECTED");
-});
-
-module.exports = db;
+export const DB_HOST = process.env.DB_HOST || 'localhost'
+export const DB_USER = process.env.DB_USER || 'root'
+export const DB_PASSWORD = process.env.DB_PASSWORD || 'password'
+export const DB_NAME = process.env.DB_NAME || 'delivery'
+export const DB_PORT = process.env.DB_PORT || 3306
