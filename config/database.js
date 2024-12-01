@@ -1,11 +1,12 @@
 const mysql = require('mysql');
-import {
+
+const {
   DB_HOST,
   DB_NAME,
   DB_PASSWORD,
   DB_USER,
   DB_PORT
-} from './config.js'
+} = require('./config');
 
 const db = mysql.createConnection({
     user: DB_USER,
