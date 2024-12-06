@@ -5,6 +5,7 @@ const DB_NAME = process.env.DB_NAME || 'delivery';
 const DB_PORT = process.env.DB_PORT || 3306;
 
 const MYSQL_URL = process.env.MYSQL_URL;
+const MYSQL_PUBLIC_URL = process.env.MYSQL_PUBLIC_URL;
 
 module.exports = {
   DB_HOST,
@@ -12,5 +13,6 @@ module.exports = {
   DB_PASSWORD,
   DB_NAME,
   DB_PORT,
-  MYSQL_URL
+  MYSQL_URL,
+  MYSQL_PUBLIC_URL
 };

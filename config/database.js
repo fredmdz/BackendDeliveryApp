@@ -1,8 +1,10 @@
 const mysql = require('mysql2');
 
 const { MYSQL_URL } = require('./config');
+const { MYSQL_PUBLIC_URL } = require('./config');
 
-const db = mysql.createConnection(MYSQL_URL);
+// const db = mysql.createConnection(MYSQL_URL);
+const db = mysql.createConnection(MYSQL_PUBLIC_URL);
 
 const {
   DB_HOST,
