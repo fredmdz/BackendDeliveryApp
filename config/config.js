@@ -4,6 +4,8 @@ const DB_PASSWORD = process.env.DB_PASSWORD || 'password';
 const DB_NAME = process.env.DB_NAME || 'delivery';
 const DB_PORT = process.env.DB_PORT || 3306;
 
+const MYSQL_URL = process.env.MYSQL_URL;
+
 module.exports = {
   DB_HOST,
   DB_USER,
